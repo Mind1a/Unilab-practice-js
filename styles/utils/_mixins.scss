@@ -1,0 +1,17 @@
+@mixin flex($justify: center, $align: center) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin container($width, $height, $border-size) {
+  width: $width;
+  height: $height;
+  border: $border-size solid #000;
+  color: $font-color;
+}
+
+@mixin card_font_size($font-size, $line-height) {
+  font-size: $font-size;
+  line-height: $line-height;
+}
