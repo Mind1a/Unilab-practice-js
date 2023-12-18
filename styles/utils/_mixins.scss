@@ -11,7 +11,19 @@
   color: $font-color;
 }
 
-@mixin card_font_size($font-size, $line-height) {
+@mixin text_font_style($color, $font-size, $font-weight, $line-height: 1rem) {
+  color: $color;
   font-size: $font-size;
+  font-weight: $font-weight;
   line-height: $line-height;
+}
+
+@mixin main_container(
+  $max-width: 1440px,
+  $padding: 0 6.25rem,
+  $margin: 0 auto
+) {
+  max-width: $max-width;
+  padding: $padding;
+  margin: $margin;
 }
