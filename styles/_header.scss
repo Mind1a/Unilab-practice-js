@@ -1,0 +1,84 @@
+body {
+  background-color: $background-color;
+}
+
+.container {
+  @include main_container;
+}
+
+.header {
+  position: relative;
+
+  .header_content {
+    position: absolute;
+    right: 0;
+    width: 70%;
+    padding: 1rem 0.6rem 0.75rem 2.1rem;
+    background-color: $white-color;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+
+    @include flex;
+    justify-content: space-between;
+  }
+
+  .header_navbar {
+    @include flex;
+    gap: 4rem;
+
+    .navigation ul a {
+      @include flex;
+      @include text_font_style(
+        $paragraph-color,
+        $paragraph-fs,
+        $regular-weight
+      );
+      gap: 0.875rem;
+      transition: 0.3s;
+
+      &:hover {
+        color: $mediumBlue-color;
+      }
+    }
+
+    .search_form {
+      position: relative;
+
+      input,
+      button {
+        outline: none;
+        border: none;
+        background-color: transparent;
+      }
+
+      input {
+        width: 19rem;
+        height: 2.4rem;
+        padding-left: 3.5rem;
+        border-radius: 1.25rem;
+        background-color: $inputBg-color;
+        color: $inputText-color;
+      }
+
+      button {
+        position: absolute;
+        top: 0.5rem;
+        left: 1.18rem;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .user_info {
+    @include flex;
+    gap: 0.875rem;
+
+    .user_profile {
+      margin-left: 0.75rem;
+    }
+
+    .user {
+      cursor: pointer;
+    }
+  }
+}
