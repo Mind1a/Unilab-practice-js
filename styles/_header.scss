@@ -70,6 +70,7 @@ body {
   }
 
   .user_info {
+    position: relative;
     @include flex;
     gap: 0.875rem;
 
