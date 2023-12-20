@@ -1,0 +1,76 @@
+.user_popup {
+  width: 300px;
+  position: absolute;
+  right: 0;
+  top: -20rem;
+  padding: 1.25rem 0 1.25rem 1.5rem;
+  background-color: $white-color;
+  border-radius: 0.75rem;
+  border: 1px solid $white-color;
+  box-shadow: 2px 4px 3px 1px rgba(108, 108, 108, 0.25);
+  @include flex;
+  flex-direction: column;
+  transition: 0.3s;
+  z-index: -1;
+
+  .userName {
+    padding-bottom: 0.75rem;
+    margin-bottom: 1.25rem;
+
+    h2 {
+      @include text_font_style(
+        $mediumBlue-color,
+        $medium-fs,
+        $medium-weight,
+        1.3rem
+      );
+    }
+  }
+
+  .my_acc {
+    width: 90%;
+    position: relative;
+    align-self: flex-start;
+
+    .acc_settings {
+      @include flex;
+      align-items: start;
+      flex-direction: column;
+      gap: 1.56rem;
+
+      .acc {
+        @include flex;
+        @include text_font_style(
+          $darkGray-color,
+          $medium-fs,
+          $regular-weight,
+          1.2rem
+        );
+        gap: 1rem;
+        transition: 0.3s;
+
+        &:hover {
+          color: $lightBlue-color;
+        }
+      }
+
+      .acc_proects {
+        margin-left: 2.4rem;
+      }
+    }
+  }
+
+  .my_acc::before {
+    content: "";
+    position: absolute;
+    top: -0.9rem;
+    width: 100%;
+    height: 1px;
+    background-color: $background-color;
+  }
+}
+
+.showPopup {
+  top: 4.3rem;
+  transition: 0.3s;
+}

@@ -1,0 +1,29 @@
+@mixin flex($justify: center, $align: center) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin container($width, $height, $border-size) {
+  width: $width;
+  height: $height;
+  border: $border-size solid #000;
+  color: $font-color;
+}
+
+@mixin text_font_style($color, $font-size, $font-weight, $line-height: 1rem) {
+  color: $color;
+  font-size: $font-size;
+  font-weight: $font-weight;
+  line-height: $line-height;
+}
+
+@mixin main_container(
+  $max-width: 1440px,
+  $padding: 0 6.25rem,
+  $margin: 0 auto
+) {
+  max-width: $max-width;
+  padding: $padding;
+  margin: $margin;
+}
