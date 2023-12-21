@@ -1,0 +1,91 @@
+.search-bar {
+  @include flex;
+  flex-direction: column;
+  padding: 2rem 2.5rem 1.5rem 2.5rem;
+  background-color: white;
+  border-radius: 10px;
+
+  //   Img & input
+  .img-input {
+    @include flex;
+    gap: 1.75rem;
+    padding: 1.5rem 0;
+    width: 100%;
+
+    // Img
+    .img {
+      border-radius: 50%;
+      overflow: hidden;
+      height: 3.5rem;
+      width: 3.5rem;
+    }
+    // input
+    .input {
+      @include flex;
+      flex: 1;
+
+      input {
+        flex: 1;
+        height: 3.5rem;
+        border-radius: 1.75rem;
+        border: none;
+        padding: 0 1.2rem;
+        color: $inputText-color;
+        background-color: $inputBg-color;
+        font-size: $paragraph-fs;
+        &:focus-visible {
+          outline: none;
+        }
+      }
+    }
+  }
+  //   Categories & Share
+  .categories-share {
+    @include flex($justify: space-between);
+    border-top: 1px solid $light-border-color;
+    padding: 0.8rem 0;
+    width: 100%;
+    // Categories
+    .categories {
+      @include flex;
+      .category {
+        @include flex;
+        gap: 0.2rem;
+        padding: 0 0.5rem;
+        height: 1.5rem;
+        border-left: 1px solid $light-border-color;
+        cursor: pointer;
+
+        &:first-child {
+          border-left: none;
+          padding-left: 0;
+        }
+
+        span {
+          font-size: $smaller-fs;
+          font-weight: $regular-weight;
+          color: $subtitle-color;
+        }
+
+        img {
+          width: 1.5rem;
+          height: 1.5rem;
+        }
+      }
+    }
+    // Share Button
+    .share {
+      button {
+        @include flex;
+        gap: 0.5rem;
+        padding: 0.8rem 1.5rem;
+        color: white;
+        background-color: $lightBlue-color;
+        border: none;
+        border-radius: 20px;
+        border: none;
+        font-size: $paragraph-fs;
+      }
+    }
+  }
+}

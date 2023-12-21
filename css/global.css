@@ -143,6 +143,10 @@ table {
   border-spacing: 0;
 }
 
+button {
+  cursor: pointer;
+}
+
 body {
   background-color: #f5f5f5;
 }
@@ -295,4 +299,96 @@ body {
 .showPopup {
   top: 4.3rem;
   transition: 0.3s;
+}
+
+.search-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 2rem 2.5rem 1.5rem 2.5rem;
+  background-color: white;
+  border-radius: 10px;
+}
+.search-bar .img-input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.75rem;
+  padding: 1.5rem 0;
+  width: 100%;
+}
+.search-bar .img-input .img {
+  border-radius: 50%;
+  overflow: hidden;
+  height: 3.5rem;
+  width: 3.5rem;
+}
+.search-bar .img-input .input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+.search-bar .img-input .input input {
+  flex: 1;
+  height: 3.5rem;
+  border-radius: 1.75rem;
+  border: none;
+  padding: 0 1.2rem;
+  color: #888;
+  background-color: #f6f6f6;
+  font-size: 0.875rem;
+}
+.search-bar .img-input .input input:focus-visible {
+  outline: none;
+}
+.search-bar .categories-share {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #ebebeb;
+  padding: 0.8rem 0;
+  width: 100%;
+}
+.search-bar .categories-share .categories {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.search-bar .categories-share .categories .category {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.2rem;
+  padding: 0 0.5rem;
+  height: 1.5rem;
+  border-left: 1px solid #ebebeb;
+  cursor: pointer;
+}
+.search-bar .categories-share .categories .category:first-child {
+  border-left: none;
+  padding-left: 0;
+}
+.search-bar .categories-share .categories .category span {
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: #303030;
+}
+.search-bar .categories-share .categories .category img {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+.search-bar .categories-share .share button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.5rem;
+  color: white;
+  background-color: #1f50ff;
+  border: none;
+  border-radius: 20px;
+  border: none;
+  font-size: 0.875rem;
 }/*# sourceMappingURL=global.css.map */
