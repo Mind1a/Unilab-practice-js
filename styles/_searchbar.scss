@@ -1,4 +1,5 @@
 .search-bar {
+  grid-area: search-bar;
   @include flex;
   flex-direction: column;
   padding: 2rem 2.5rem 1.5rem 2.5rem;
