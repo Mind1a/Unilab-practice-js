@@ -2,21 +2,19 @@ body {
   background-color: $background-color;
 }
 
-.container {
-  @include main_container;
-}
+// .container {
+//   @include main_container;
+// }
 
 .header {
-  position: relative;
+  grid-area: header;
 
   .header_content {
-    position: absolute;
-    right: 0;
-    width: 70%;
     padding: 1rem 0.6rem 0.75rem 2.1rem;
     background-color: $white-color;
     border-bottom-left-radius: 1rem;
     border-bottom-right-radius: 1rem;
+    z-index: 999;
 
     @include flex;
     justify-content: space-between;

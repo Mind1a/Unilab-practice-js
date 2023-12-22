@@ -1,0 +1,18 @@
+#main-content-container {
+  display: grid;
+  gap: 2rem 1.5rem;
+  max-width: 80%;
+  margin: auto;
+  grid-template-areas:
+    "aside-left header header"
+    "aside-left search-bar aside-right"
+    "aside-left posts aside-right";
+  grid-auto-flow: column;
+}
+
+// ! შეგიძლიათ წაშალოთ
+@media (max-width: 70rem) {
+  #main-content-container {
+    max-width: 100%;
+  }
+}
