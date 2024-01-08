@@ -1,13 +1,174 @@
-// ! შექმნილია თვალსაჩინოებისთვის. შეგიძლიათ შეცვალოთ
+// Left content -->>
+
 .aside-left {
   grid-area: aside-left;
-  border: 1px solid black;
-  padding: 20px;
-  position: relative;
+  padding: 0 1.25rem;
+  background-color: $white-color;
+
   .content {
     position: sticky;
-    top: 20px;
+    top: 1.25rem;
     left: 0;
-    background-color: red;
+    @include flex;
+    align-items: normal;
+    flex-direction: column;
+
+    .scroller {
+      overflow-y: auto;
+      max-height: 87vh;
+      // For FireFox
+      scrollbar-width: thin;
+      scrollbar-color: darkgray lightgray;
+    }
+
+    // For Safari and Chrome
+    ::-webkit-scrollbar {
+      width: 5px;
+      border-radius: 5rem;
+    }
+
+    ::-webkit-scrollbar-thumb,
+    ::-webkit-scrollbar-track {
+      background-color: darkgray;
+      border-radius: 5rem;
+      visibility: hidden;
+    }
+
+    ::-webkit-scrollbar-track {
+      background-color: lightgray;
+    }
+
+    .scroller:hover::-webkit-scrollbar-thumb,
+    .scroller:hover::-webkit-scrollbar-track {
+      visibility: visible;
+    }
+
+    .logo {
+      padding-bottom: 1rem;
+      margin-bottom: 1.25rem;
+      border-bottom: 1px solid $light-border-color;
+    }
+
+    .user_info {
+      @include Border_bottom;
+
+      .user_Profile {
+        @include flex;
+        justify-content: start;
+        margin-bottom: 1.13rem;
+
+        h4 {
+          margin-left: 1rem;
+          @include text_font_style($font-color, $medium-fs, $regular-weight);
+        }
+      }
+
+      p {
+        width: 300px;
+        text-align: start;
+        @include text_font_style(
+          $lightBlue-color,
+          $medium-fs,
+          $semiBold-weight
+        );
+      }
+    }
+
+    .user_categories {
+      @include flex;
+      justify-content: space-around;
+      text-align: center;
+      @include Border_bottom;
+
+      .category {
+        h2,
+        p {
+          @include text_font_style(
+            $subtitle-color,
+            $medium-fs,
+            $semiBold-weight
+          );
+        }
+
+        p {
+          margin-top: 0.75rem;
+          font-size: $smaller-fs;
+          font-weight: $regular-weight;
+        }
+      }
+    }
+
+    .user_features {
+      @include flex;
+      align-items: start;
+      flex-direction: column;
+      gap: 1.25rem;
+      @include Border_bottom;
+
+      .feature {
+        a {
+          @include flex;
+          @include text_font_style(
+            $subtitle-color,
+            $paragraph-fs,
+            $regular-weight
+          );
+          gap: 0.875rem;
+          transition: 0.3s;
+
+          &:hover {
+            color: $mediumBlue-color;
+          }
+        }
+      }
+    }
+
+    .pinned_info {
+      .title {
+        @include text_font_style($subtitle-color, $medium-fs, $semiBold-weight);
+        margin-bottom: 1.43rem;
+      }
+
+      .pinned {
+        @include flex;
+        justify-content: start;
+        gap: 1rem;
+        margin-bottom: 0.62rem;
+
+        h3 {
+          max-width: 12rem;
+          line-height: 1.2rem;
+          @include text_font_style(
+            $subtitle-color,
+            $paragraph-fs,
+            $regular-weight
+          );
+
+          span {
+            font-weight: $semiBold-weight;
+          }
+        }
+      }
+
+      .see_more {
+        margin: 2rem 0 2rem;
+
+        a {
+          @include flex;
+          @include text_font_style(
+            $subtitle-color,
+            $paragraph-fs,
+            $regular-weight
+          );
+          justify-content: start;
+          gap: 1rem;
+          transition: 0.3s;
+
+          &:hover {
+            color: $mediumBlue-color;
+          }
+        }
+      }
+    }
   }
 }

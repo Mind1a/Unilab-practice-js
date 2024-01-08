@@ -27,3 +27,13 @@
   padding: $padding;
   margin: $margin;
 }
+
+@mixin Border_bottom(
+  $m-b: 1.5rem,
+  $p-b: 1.5rem,
+  $border-b: 1px solid $light-border-color
+) {
+  margin-bottom: $m-b;
+  padding-bottom: $p-b;
+  border-bottom: $border-b;
+}
