@@ -260,8 +260,8 @@
           </div>
         </div>
       </header>
-      <!-- Search Bar -->
-      <div class="search-bar">
+      <!-- Share Bar -->
+      <form class="search-bar" id="postForm">
         <div class="img-input">
           <div class="img">
             <img src="./assets/user-searchbar.svg" alt="User" />
@@ -297,19 +297,19 @@
               <span>Mention</span>
             </div>
 
-            <div class="category">
+            <div class="category" id="selectImage">
               <img src="./assets/hash.svg" alt="hashtag" />
               <span>Hashtag</span>
             </div>
           </div>
           <div class="share">
-            <button>
+            <button type="submit">
               Share
               <img src="./assets/Vector.svg" alt="share" />
             </button>
           </div>
         </div>
-      </div>
+      </form>
       <!-- Aside Left with Scroller -->
       <div class="aside-left">
         <div class="content">
@@ -526,172 +526,250 @@
       <div class="aside-right">
         <div class="content">Aside Right content</div>
       </div>
-      <div class="posts">
-        <!-- Fake Posts -->
-        <div class="post">
-          <h1>This is a FAKE post</h1>
+      <!-- Posts from design and Adding new Posts -->
+      <div class="posts" id="postContainer">
+        <div class="user-post">
+          <div class="user-info">
+            <img src="./assets/user1.png" alt="user" />
+            <div>
+              <h3 class="name">Victor Fernando</h3>
+              <h4 class="time author">1 hr ago</h4>
+            </div>
+          </div>
+          <div class="user-content">
+            <p class="text">
+              The construction industry's future will undoubtedly include
+              "carbon reduction" as a mandatory task. Aside from locally
+              sourced, virgin materials, an increasing number of new materials
+              are becoming available....
+            </p>
+            <img src="./assets/upload.png" alt="upload-image" />
+          </div>
+          <div class="additionals">
+            <div class="icons">
+              <span>
+                <svg
+                  class="likeIcon"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                >
+                  <path
+                    d="M17.3667 3.84172C16.941 3.41589 16.4357 3.0781 15.8795 2.84763C15.3232 2.61716 14.7271 2.49854 14.125 2.49854C13.5229 2.49854 12.9268 2.61716 12.3705 2.84763C11.8143 3.0781 11.309 3.41589 10.8833 3.84172L10 4.72506L9.11667 3.84172C8.25692 2.98198 7.09086 2.49898 5.875 2.49898C4.65914 2.49898 3.49308 2.98198 2.63333 3.84172C1.77359 4.70147 1.29059 5.86753 1.29059 7.08339C1.29059 8.29925 1.77359 9.46531 2.63333 10.3251L3.51667 11.2084L10 17.6917L16.4833 11.2084L17.3667 10.3251C17.7925 9.89943 18.1303 9.39407 18.3608 8.83785C18.5912 8.28164 18.7099 7.68546 18.7099 7.08339C18.7099 6.48132 18.5912 5.88514 18.3608 5.32893C18.1303 4.77271 17.7925 4.26735 17.3667 3.84172V3.84172Z"
+                    stroke="#303030"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </span>
+              <span>
+                <svg
+                  class="commentIcon"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                >
+                  <path
+                    d="M17.5 9.58336C17.5029 10.6832 17.2459 11.7683 16.75 12.75C16.162 13.9265 15.2581 14.916 14.1395 15.6078C13.021 16.2995 11.7319 16.6662 10.4167 16.6667C9.31678 16.6696 8.23176 16.4126 7.25 15.9167L2.5 17.5L4.08333 12.75C3.58744 11.7683 3.33047 10.6832 3.33333 9.58336C3.33384 8.26815 3.70051 6.97907 4.39227 5.86048C5.08402 4.7419 6.07355 3.838 7.25 3.25002C8.23176 2.75413 9.31678 2.49716 10.4167 2.50002H10.8333C12.5703 2.59585 14.2109 3.32899 15.441 4.55907C16.671 5.78915 17.4042 7.42973 17.5 9.16669V9.58336Z"
+                    stroke="#303030"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </span>
+              <span>
+                <svg
+                  class="shareIcon"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                >
+                  <path
+                    d="M15 6.66663C16.3807 6.66663 17.5 5.54734 17.5 4.16663C17.5 2.78591 16.3807 1.66663 15 1.66663C13.6193 1.66663 12.5 2.78591 12.5 4.16663C12.5 5.54734 13.6193 6.66663 15 6.66663Z"
+                    stroke="#303030"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M5 12.5C6.38071 12.5 7.5 11.3807 7.5 10C7.5 8.61929 6.38071 7.5 5 7.5C3.61929 7.5 2.5 8.61929 2.5 10C2.5 11.3807 3.61929 12.5 5 12.5Z"
+                    stroke="#303030"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M15 18.3334C16.3807 18.3334 17.5 17.2141 17.5 15.8334C17.5 14.4527 16.3807 13.3334 15 13.3334C13.6193 13.3334 12.5 14.4527 12.5 15.8334C12.5 17.2141 13.6193 18.3334 15 18.3334Z"
+                    stroke="#303030"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M7.15833 11.2583L12.85 14.575"
+                    stroke="#303030"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M12.8417 5.42505L7.15833 8.74172"
+                    stroke="#303030"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </span>
+            </div>
+            <a class="see-more" href="#">See more...</a>
+          </div>
         </div>
-        <div class="post">
-          <h1>This is a FAKE post</h1>
-        </div>
-        <div class="post">
-          <h1>This is a FAKE post</h1>
-        </div>
-        <div class="post">
-          <h1>This is a FAKE post</h1>
-        </div>
-        <div class="post">
-          <h1>This is a FAKE post</h1>
-        </div>
-        <div class="post">
-          <h1>This is a FAKE post</h1>
-        </div>
-        <div class="post">
-          <h1>This is a FAKE post</h1>
-        </div>
-        <div class="post">
-          <h1>This is a FAKE post</h1>
-        </div>
-        <div class="post">
-          <h1>This is a FAKE post</h1>
-        </div>
-        <div class="post">
-          <h1>This is a FAKE post</h1>
-        </div>
-        <div class="post">
-          <h1>This is a FAKE post</h1>
-        </div>
-        <div class="post">
-          <h1>This is a FAKE post</h1>
-        </div>
-        <div class="post">
-          <h1>This is a FAKE post</h1>
-        </div>
-        <div class="post">
-          <h1>This is a FAKE post</h1>
-        </div>
-        <div class="post">
-          <h1>This is a FAKE post</h1>
-        </div>
-        <div class="post">
-          <h1>This is a FAKE post</h1>
-        </div>
-        <div class="post">
-          <h1>This is a FAKE post</h1>
-        </div>
-        <div class="post">
-          <h1>This is a FAKE post</h1>
-        </div>
-        <div class="post">
-          <h1>This is a FAKE post</h1>
-        </div>
-        <div class="post">
-          <h1>This is a FAKE post</h1>
-        </div>
-        <div class="post">
-          <h1>This is a FAKE post</h1>
-        </div>
-        <div class="post">
-          <h1>This is a FAKE post</h1>
-        </div>
-        <div class="post">
-          <h1>This is a FAKE post</h1>
-        </div>
-        <div class="post">
-          <h1>This is a FAKE post</h1>
-        </div>
-        <div class="post">
-          <h1>This is a FAKE post</h1>
-        </div>
-        <div class="post">
-          <h1>This is a FAKE post</h1>
-        </div>
-        <div class="post">
-          <h1>This is a FAKE post</h1>
-        </div>
-        <div class="post">
-          <h1>This is a FAKE post</h1>
-        </div>
-        <div class="post">
-          <h1>This is a FAKE post</h1>
-        </div>
-        <div class="post">
-          <h1>This is a FAKE post</h1>
-        </div>
-        <div class="post">
-          <h1>This is a FAKE post</h1>
-        </div>
-        <div class="post">
-          <h1>This is a FAKE post</h1>
-        </div>
-        <div class="post">
-          <h1>This is a FAKE post</h1>
-        </div>
-        <div class="post">
-          <h1>This is a FAKE post</h1>
-        </div>
-        <div class="post">
-          <h1>This is a FAKE post</h1>
-        </div>
-        <div class="post">
-          <h1>This is a FAKE post</h1>
-        </div>
-        <div class="post">
-          <h1>This is a FAKE post</h1>
-        </div>
-        <div class="post">
-          <h1>This is a FAKE post</h1>
-        </div>
-        <div class="post">
-          <h1>This is a FAKE post</h1>
-        </div>
-        <div class="post">
-          <h1>This is a FAKE post</h1>
-        </div>
-        <div class="post">
-          <h1>This is a FAKE post</h1>
-        </div>
-        <div class="post">
-          <h1>This is a FAKE post</h1>
-        </div>
-        <div class="post">
-          <h1>This is a FAKE post</h1>
-        </div>
-        <div class="post">
-          <h1>This is a FAKE post</h1>
-        </div>
-        <div class="post">
-          <h1>This is a FAKE post</h1>
-        </div>
-        <div class="post">
-          <h1>This is a FAKE post</h1>
-        </div>
-        <div class="post">
-          <h1>This is a FAKE post</h1>
-        </div>
-        <div class="post">
-          <h1>This is a FAKE post</h1>
-        </div>
-        <div class="post">
-          <h1>This is a FAKE post</h1>
-        </div>
-        <div class="post">
-          <h1>This is a FAKE post</h1>
-        </div>
-        <div class="post">
-          <h1>This is a FAKE post</h1>
-        </div>
-        <div class="post">
-          <h1>This is a FAKE post</h1>
-        </div>
-        <div class="post">
-          <h1>This is a FAKE post</h1>
-        </div>
-        <div class="post">
-          <h1>This is a FAKE post</h1>
+        <div class="user-post">
+          <div class="user-info">
+            <img src="./assets/user2.png" alt="user" />
+            <div>
+              <h3 class="name">
+                Skincare
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="13"
+                  height="13"
+                  viewBox="0 0 13 13"
+                  fill="none"
+                >
+                  <path
+                    d="M9.20833 11.375V10.2917C9.20833 9.71703 8.98006 9.16593 8.57373 8.7596C8.1674 8.35327 7.6163 8.125 7.04166 8.125H2.70833C2.1337 8.125 1.58259 8.35327 1.17627 8.7596C0.769937 9.16593 0.541664 9.71703 0.541664 10.2917V11.375"
+                    stroke="black"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M4.875 5.95833C6.07162 5.95833 7.04167 4.98828 7.04167 3.79167C7.04167 2.59505 6.07162 1.625 4.875 1.625C3.67839 1.625 2.70834 2.59505 2.70834 3.79167C2.70834 4.98828 3.67839 5.95833 4.875 5.95833Z"
+                    stroke="black"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M12.4583 11.375V10.2917C12.458 9.81162 12.2982 9.34527 12.0041 8.96586C11.71 8.58644 11.2982 8.31545 10.8333 8.19543"
+                    stroke="black"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M8.66666 1.69543C9.13272 1.81476 9.54581 2.08581 9.8408 2.46585C10.1358 2.84589 10.2959 3.3133 10.2959 3.79439C10.2959 4.27548 10.1358 4.74289 9.8408 5.12293C9.54581 5.50297 9.13272 5.77402 8.66666 5.89335"
+                    stroke="black"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </h3>
+              <h4 class="time author">Amanda Thompson</h4>
+            </div>
+          </div>
+          <div class="user-content">
+            <p class="text">Silicones in Skincare: Should You Avoid Them?</p>
+            <img src="./assets/upload2.png" alt="upload-image" />
+          </div>
+          <div class="additionals">
+            <div class="icons">
+              <span>
+                <svg
+                  class="likeIcon"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                >
+                  <path
+                    d="M17.3667 3.84172C16.941 3.41589 16.4357 3.0781 15.8795 2.84763C15.3232 2.61716 14.7271 2.49854 14.125 2.49854C13.5229 2.49854 12.9268 2.61716 12.3705 2.84763C11.8143 3.0781 11.309 3.41589 10.8833 3.84172L10 4.72506L9.11667 3.84172C8.25692 2.98198 7.09086 2.49898 5.875 2.49898C4.65914 2.49898 3.49308 2.98198 2.63333 3.84172C1.77359 4.70147 1.29059 5.86753 1.29059 7.08339C1.29059 8.29925 1.77359 9.46531 2.63333 10.3251L3.51667 11.2084L10 17.6917L16.4833 11.2084L17.3667 10.3251C17.7925 9.89943 18.1303 9.39407 18.3608 8.83785C18.5912 8.28164 18.7099 7.68546 18.7099 7.08339C18.7099 6.48132 18.5912 5.88514 18.3608 5.32893C18.1303 4.77271 17.7925 4.26735 17.3667 3.84172V3.84172Z"
+                    stroke="#303030"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </span>
+              <span>
+                <svg
+                  class="commentIcon"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                >
+                  <path
+                    d="M17.5 9.58336C17.5029 10.6832 17.2459 11.7683 16.75 12.75C16.162 13.9265 15.2581 14.916 14.1395 15.6078C13.021 16.2995 11.7319 16.6662 10.4167 16.6667C9.31678 16.6696 8.23176 16.4126 7.25 15.9167L2.5 17.5L4.08333 12.75C3.58744 11.7683 3.33047 10.6832 3.33333 9.58336C3.33384 8.26815 3.70051 6.97907 4.39227 5.86048C5.08402 4.7419 6.07355 3.838 7.25 3.25002C8.23176 2.75413 9.31678 2.49716 10.4167 2.50002H10.8333C12.5703 2.59585 14.2109 3.32899 15.441 4.55907C16.671 5.78915 17.4042 7.42973 17.5 9.16669V9.58336Z"
+                    stroke="#303030"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </span>
+              <span>
+                <svg
+                  class="shareIcon"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                >
+                  <path
+                    d="M15 6.66663C16.3807 6.66663 17.5 5.54734 17.5 4.16663C17.5 2.78591 16.3807 1.66663 15 1.66663C13.6193 1.66663 12.5 2.78591 12.5 4.16663C12.5 5.54734 13.6193 6.66663 15 6.66663Z"
+                    stroke="#303030"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M5 12.5C6.38071 12.5 7.5 11.3807 7.5 10C7.5 8.61929 6.38071 7.5 5 7.5C3.61929 7.5 2.5 8.61929 2.5 10C2.5 11.3807 3.61929 12.5 5 12.5Z"
+                    stroke="#303030"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M15 18.3334C16.3807 18.3334 17.5 17.2141 17.5 15.8334C17.5 14.4527 16.3807 13.3334 15 13.3334C13.6193 13.3334 12.5 14.4527 12.5 15.8334C12.5 17.2141 13.6193 18.3334 15 18.3334Z"
+                    stroke="#303030"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M7.15833 11.2583L12.85 14.575"
+                    stroke="#303030"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M12.8417 5.42505L7.15833 8.74172"
+                    stroke="#303030"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </span>
+            </div>
+            <a class="see-more" href="#">See more...</a>
+          </div>
         </div>
       </div>
     </div>
     <script src="./js/script.js"></script>
+    <script src="./js/newPosts.js"></script>
   </body>
 </html>
