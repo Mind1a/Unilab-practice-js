@@ -404,6 +404,10 @@ body {
   border-radius: 20px;
   border: none;
   font-size: 0.875rem;
+  transition: 0.3s;
+}
+.search-bar .categories-share .share button:hover {
+  filter: brightness(0.8);
 }
 
 .aside-right {
@@ -586,15 +590,80 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  gap: 20px;
-  border: 1px solid black;
-  padding: 20px;
+  gap: 1.25rem;
+  background-color: #ffffff;
+  border-radius: 0.625rem;
+  padding: 1.25rem;
 }
-.posts .post {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.posts .user-post {
+  border-bottom: 1px solid #ebebeb;
   width: 100%;
-  height: 200px;
-  border: 5px solid red;
+}
+.posts .user-post .user-info {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 1.25rem;
+  margin-bottom: 0.625rem;
+}
+.posts .user-post .user-info img {
+  border-radius: 50%;
+}
+.posts .user-post .user-info .name {
+  color: #303030;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 0.56rem;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 0.75rem;
+}
+.posts .user-post .user-info .time {
+  color: #2984ce;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+.posts .user-post .user-content {
+  margin-bottom: 0.75rem;
+}
+.posts .user-post .user-content .text {
+  color: #555555;
+  font-size: 0.875rem;
+  font-weight: 400;
+  margin-bottom: 0.75rem;
+}
+.posts .user-post .user-content img {
+  width: 100%;
+  max-height: 20.06rem;
+  height: 100%;
+  border-radius: 0.625rem;
+  overflow: hidden;
+}
+.posts .user-post .additionals {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.posts .user-post .additionals .icons {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 1.25rem;
+}
+.posts .user-post .additionals .icons span svg {
+  cursor: pointer;
+}
+.posts .user-post .additionals .icons .fillRed {
+  fill: brown;
+}
+.posts .user-post .additionals .icons .fillRed path {
+  stroke: brown;
+}
+.posts .user-post .additionals .see-more {
+  color: #1f50ff;
+  font-size: #555555;
+  font-weight: 500;
+  text-decoration-line: underline;
 }/*# sourceMappingURL=global.css.map */

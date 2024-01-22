@@ -17,3 +17,15 @@ document.addEventListener("click", (event) => {
     popupToggle.classList.remove("showPopup");
   }
 });
+
+// User Post Icon functions
+
+const parentContainer = document.getElementById("postContainer");
+
+parentContainer.addEventListener("click", (e) => {
+  const targetElement = e.target.closest(".likeIcon");
+
+  if (targetElement) {
+    targetElement.classList.toggle("fillRed");
+  }
+});
